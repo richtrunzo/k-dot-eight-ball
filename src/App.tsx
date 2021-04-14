@@ -1,10 +1,11 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Navbar from './Nav'
 
 
 function App() {
 let [question, setQuestion] = useState(false);
+let [askedQ, setAskedQ] = useState('');
 
 let answers = {
   1: '',
@@ -34,6 +35,11 @@ let formSubmit = () => {
 
 let restart = () => {
   setQuestion(false)
+  setAskedQ('')
+}
+
+let setAsked = (e: React.FormEvent<HTMLInputElement>) => {
+  setAskedQ(e.currentTarget.value)
 }
 
 
@@ -44,7 +50,8 @@ if (question === true) {
     <Navbar />
     <div>
       <img></img>
-      <p>This is where the 8 ball pops up</p>
+      <p>{askedQ}</p>
+      <p>answer</p>
       <button onClick={restart}></button>
     </div>
     </>
@@ -57,7 +64,7 @@ if (question === true) {
       <h1>This is where the question is asked</h1>
       <img></img>
       <form onSubmit={formSubmit} >
-        <input></input>
+        <input onChange={setAsked}></input>
         <button></button>
       </form>
     </div>
