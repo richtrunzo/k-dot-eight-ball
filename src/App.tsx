@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './App.css';
+import Navbar from './Nav'
 
 
 function App() {
@@ -39,14 +40,19 @@ let restart = () => {
 
 if (question === true) {
   return (
+    <>
+    <Navbar />
     <div>
       <img></img>
       <p>This is where the 8 ball pops up</p>
       <button onClick={restart}></button>
     </div>
+    </>
   )
 } else {
   return (
+    <>
+    <Navbar />
     <div>
       <h1>This is where the question is asked</h1>
       <img></img>
@@ -55,6 +61,7 @@ if (question === true) {
         <button></button>
       </form>
     </div>
+    </>
   );
 }
 }
