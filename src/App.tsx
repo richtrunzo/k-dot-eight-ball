@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
+
 function App() {
+let [question, setQuestion] = useState(false);
+
+let answers = {
+  1: '',
+  2: '',
+  3: '',
+  4: '',
+  5: '',
+  6: '',
+  7: '',
+  8: ''
+}
+
+let images = {
+  1: '',
+  2: '',
+  3: '',
+  4: '',
+  5: '',
+  6: '',
+  7: '',
+  8: ''
+}
+
+let formSubmit = () => {
+  setQuestion(true)
+}
+
+let restart = () => {
+  setQuestion(false)
+}
+
+
+
+if (question === true) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <img></img>
+      <p>This is where the 8 ball pops up</p>
+      <button onClick={restart}></button>
+    </div>
+  )
+} else {
+  return (
+    <div>
+      <h1>This is where the question is asked</h1>
+      <img></img>
+      <form onSubmit={formSubmit} >
+        <input></input>
+        <button></button>
+      </form>
     </div>
   );
+}
 }
 
 export default App;
