@@ -82,7 +82,7 @@ if (question === true) {
       <img></img>
       <form onSubmit={formSubmit} >
         <input onChange={setAsked}></input>
-        <button></button>
+        <button className="btn-primary"></button>
       </form>
     </div>
     </>
