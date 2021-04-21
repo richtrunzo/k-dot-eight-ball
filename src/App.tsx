@@ -79,7 +79,7 @@ if (question === true) {
     <Navbar />
     <div className="d-flex justify-content-center flex-column">
       <h1>This is where the question is asked</h1>
-      <img src="./images/k-dot-face.png"></img>
+      <img src={'./images/kface-2.png'}></img>
       <form className="mx-auto text-center" onSubmit={formSubmit} >
         <input onChange={setAsked}></input>
         <button className="btn-primary"></button>
