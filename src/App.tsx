@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ReactEventHandler, useState} from 'react';
 import './App.css';
 import Navbar from './Nav'
 
@@ -39,6 +39,7 @@ let [askedQ, setAskedQ] = useState('');
 
 
 let formSubmit = () => {
+
   setQuestion(true)
 }
 
@@ -65,8 +66,8 @@ if (question === true) {
   return (
     <>
     <Navbar />
-    <div className="d-flex justify-content-center flex-column">
-      <img src={x.image}></img>
+    <div className="d-flex align-items-center flex-column">
+      <img className='q-image' src={x.image}></img>
       <p>{askedQ}</p>
       <p>{x.text}</p>
       <button onClick={restart}>Ask another question</button>
@@ -78,11 +79,10 @@ if (question === true) {
     <>
     <Navbar />
     <div className="d-flex justify-content-center align-items-center flex-column">
-      <h1>Ask K-Dot a Question</h1>
-      <img src='./images/kdotface.png'></img>
+      <img src='./images/kdotface.png' className="mt-2"></img>
       <form className="mx-auto text-center d-flex align-items-center flex-column " onSubmit={formSubmit} >
-        <input onChange={setAsked}></input>
-        <button className="btn-primary mt-5"> Submit your Q</button>
+        <input onChange={setAsked} className='form-control' placeholder='Ask K-dot a question'></input>
+        <button className="btn-primary mt-5">Submit your Q</button>
       </form>
     </div>
     </>
